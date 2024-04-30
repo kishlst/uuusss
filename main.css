@@ -1,0 +1,58 @@
+body {
+  margin: 0px;
+  height: 100vh;
+  background-color: rgba(215, 23, 23, 0.794);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-one {
+  /* position: absolute; */
+  width: 100px;
+  height: 100px;
+  border: 3px solid yellow;
+  background-color: red;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-one {
+  /* Через transform можно передвигать элемент по сайту*/
+  /* Можно передвигать x,y через свойство translate(not-> x,y), просто начала нужно указать x потом y. */
+  /* translate(x,y) лучше использовать вместо Margin -> margin взаемодействует с объектами при анимации. */
+    /* transform-origin -> говорит с какого угла будет начинатся анимация.*/
+  /* Называется вращение с какого-то угла. */
+  /* Можно так же указывать с какой стороны стенки будет производится анимация. */
+  
+  /* transfrom-origin -> пишется отдельно от transform */
+  /* transform: rotate(0deg) scale(1). */
+  /* Две анимации на один объект нельзя прикрепить. */
+  animation: animation 2s ease forwards;
+}
+
+p {
+  margin-top: 70px;
+  text-align: center;
+  font-size: 5px;
+  width: 50%;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateX(900px) rotate(90deg);
+    transform-origin: left;
+    color: red;
+  }50% {
+    transform: translateX(-200px) rotate(180deg);
+    transform-origin: left;
+    color: red;
+  }75% {transform: translateX(100px); transform-origin: left; color: red; background-color: red;}
+  100% {
+    transform: translateY(0px) rotate(360deg) scale(3);
+    color: yellow;
+    background: url('photo_5301016179558701648_y.jpg');
+    background-size: cover;
+  }
+}
